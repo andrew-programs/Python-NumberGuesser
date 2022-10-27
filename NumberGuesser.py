@@ -42,10 +42,10 @@ class NumberGuesser:
         
         return range
 
-# Main Function
+# Example Main Function
 def main() -> None:
     guesser = NumberGuesser(0, 100)
-    winner, guessCount, hintsUsed = False, 0, 0
+    winner, guessCount, hintsUsed = False, 1, 0
 
     print("---------------Number Guessing Game---------------\n"
           f"Maximum Number: {guesser.max()}\n"
@@ -54,7 +54,6 @@ def main() -> None:
           "---------------Number Guessing Game---------------")
 
     while guessCount != 5 and winner != True:
-        guessCount += 1
         guess = input(f"Guess #{guessCount} > ")
         
         # Attempts to convert guess into an integer
@@ -68,6 +67,8 @@ def main() -> None:
             if guesser.guess(int(guess)):
                 print("You've won!")
                 winner = True
+            else:
+                guessCount += 1
         elif guess.lower() == "hint":
             hintsUsed += 1
             range = guesser.hint(hintsUsed)
