@@ -1,8 +1,6 @@
-from dataclasses import dataclass
 from random import randint
 
 # NumberGuesser Class
-@dataclass
 class NumberGuesser:
     def __init__(self, minNum: int, maxNum: int):
         self.minNum = minNum
