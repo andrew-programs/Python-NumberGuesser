@@ -2,6 +2,7 @@ from random import randint
 
 # NumberGuesser Class
 class NumberGuesser:
+    # Initializer
     def __init__(self, minNum: int, maxNum: int):
         self.minNum = minNum
         self.maxNum = maxNum
